@@ -1,6 +1,7 @@
 const express = require("express");
 const { check } = require("express-validator");
 const teamCon = require("../controllers/team");
+// const msgSend = require("../utils/msgSend");
 
 const {
   signUp,
@@ -84,5 +85,6 @@ router.post(
   ],
   changePassword
 );
-
+// console.log("dd",msgSend);
+// router.get('/',msgSend);
 module.exports = router;

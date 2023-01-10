@@ -1,4 +1,4 @@
-require("./database/database");
+// const database = require("./database/database");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -14,9 +14,8 @@ const sponsorRoutes = require("./routes/sponsors");
 const adminRoutes = require("./routes/admin");
 const payRoutes = require("./routes/pay");
 const error404 = require("./controllers/error404");
-
 require("dotenv").config();
-
+const msgSend  = require('./utils/msgSend')
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,7 +32,6 @@ app.use(cors(data));
 app.set("view engine", "ejs");
 
 app.use("/profile", express.static("upload/images"));
-
 app.use("/domain", domain);
 app.use("/coordinator", coordinator);
 app.use("/workshop", workshop);
